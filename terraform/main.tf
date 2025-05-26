@@ -57,7 +57,7 @@ module "eks" {
   environment        = var.environment
   vpc_id             = module.vpc.vpc_id
   subnet_ids         = module.vpc.subnet_ids
-  kubernetes_version = "1.27"
+  kubernetes_version = var.kubernetes_version
 }
 
 module "atlantis" {
