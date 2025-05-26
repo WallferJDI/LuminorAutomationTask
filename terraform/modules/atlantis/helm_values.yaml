@@ -1,0 +1,16 @@
+github:
+  user: ${github_user}
+  token: ${github_token}
+  secret: ${github_webhook_secret}
+
+service:
+  type: LoadBalancer
+
+repoConfig: |
+  ---
+   repos:
+   - id: /.*/
+     branch: /.*/
+     apply_requirements: [approved]
+     allowed_overrides: [apply_requirements, workflow, delete_source_branch_on_merge]
+     allow_custom_workflows: true
